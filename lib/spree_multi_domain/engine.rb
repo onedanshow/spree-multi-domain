@@ -16,7 +16,7 @@ module SpreeMultiDomain
     end
 
     config.to_prepare &method(:activate).to_proc
-
+=begin
     initializer "templates with dynamic layouts" do |app|
       ActionView::TemplateRenderer.class_eval do
         def find_layout_with_multi_store(layout, locals)
@@ -36,7 +36,7 @@ module SpreeMultiDomain
         alias_method_chain :find_layout, :multi_store
       end
     end
-
+=end
     initializer "current order decoration" do |app|
       require 'spree/core/controller_helpers/order'
       ::Spree::Core::ControllerHelpers::Order.module_eval do
